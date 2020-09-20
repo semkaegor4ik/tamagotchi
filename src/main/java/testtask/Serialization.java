@@ -30,15 +30,20 @@ public class Serialization implements Serializable {
         {
             ConditionThread conditionThread = new ConditionThread();
             Serialization serialization = (Serialization)ois.readObject();
-            tamagotchi.drawBackground();
-            tamagotchi.setDateOfDead(serialization.dateOfDead);
-            tamagotchi.setAnimal(serialization.animal);
-            tamagotchi.setCountOfFeed(serialization.countOfFeed);
-            conditionThread.setAnimalAndImageLabel(serialization.animal);
-            if(!Condition.DIE.equals(serialization.animal.getCondition()))
-                conditionThread.start();
-            tamagotchi.setConditionThread(conditionThread);
-            tamagotchi.getController().drawAllElements(serialization.animal);
+            if(serialization.animal!= null) {
+                tamagotchi.drawBackground();
+                tamagotchi.setDateOfDead(serialization.dateOfDead);
+                tamagotchi.setAnimal(serialization.animal);
+                tamagotchi.setCountOfFeed(serialization.countOfFeed);
+                conditionThread.setAnimalAndImageLabel(serialization.animal);
+                if (!Condition.DIE.equals(serialization.animal.getCondition()))
+                    conditionThread.start();
+                tamagotchi.setConditionThread(conditionThread);
+                tamagotchi.getController().drawAllElements(serialization.animal);
+            }
+            else{
+                tamagotchi.start();
+            }
         }
         catch(IOException|ClassNotFoundException ex){
             tamagotchi.start();

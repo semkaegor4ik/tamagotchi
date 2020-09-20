@@ -345,7 +345,7 @@ public class UIController implements Serializable {
         imageLabel.setText(tamagotchi.getAnimal().getName());
         imageLabel.setGraphic(imageView);
         imageLabel.setTranslateX(tamagotchi.getAnimal().getX());
-        imageLabel.setTranslateY(Tamagotchi.height/3*1.75);
+        imageLabel.setTranslateY(Tamagotchi.height/3*1.85);
         imageLabel.setGraphicTextGap(20);
         imageLabel.setContentDisplay(ContentDisplay.BOTTOM);
 
