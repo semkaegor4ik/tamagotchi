@@ -7,6 +7,7 @@
 Далее следует добавть модули этой библиотеки в Run/Debug Configurations, VM options
 --module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml
 где PATH_TO_FX путь до скаченного файла, его можно задать в настройках, либо написать в явном виде
+Также при работе был использован плагин lombok, который требуется установить для корректной работы программы. 
 
 # instruction
 
