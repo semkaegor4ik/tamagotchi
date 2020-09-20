@@ -7,7 +7,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-public class App extends Application {         //
+public class App extends Application {         
     private Serialization serialization;
     private Tamagotchi tamagotchi;
     private Pane root;

@@ -11,7 +11,7 @@ import java.util.Date;
 public class Animal implements Serializable {
 
     private MaturationStage maturationStage;
-    private TypeOfAnimal typeOfAnimal;
+    private final TypeOfAnimal typeOfAnimal;
     private final String name;
     private Condition condition;
 

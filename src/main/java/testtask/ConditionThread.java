@@ -13,7 +13,7 @@ public class ConditionThread extends Thread {
     public static final long onePercentInMillisecondsForSatiety = 288000;
     public static final long onePercentInMillisecondsForMood = 72000;
 
-    public void setAnimal(Animal animal){
+    public void setAnimalAndImageLabel(Animal animal){
         this.animal = animal;
         controller.setAnimalLabels(animal);
     }

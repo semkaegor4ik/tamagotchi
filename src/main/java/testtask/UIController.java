@@ -20,56 +20,56 @@ public class UIController implements Serializable {
 
     private Tool animalTool;
     private Tool playerTool;
-    private Pane root;
+    private final Pane root;
     private static UIController controller;
     private Tamagotchi tamagotchi;
 
-    private AnimationTimer timer;
+    private final AnimationTimer timer;
     //main
-    private ImageView background;
-    private ImageView imageViewEgg;
-    private ImageView imageRIP;
+    private final ImageView background;
+    private final ImageView imageViewEgg;
+    private final ImageView imageRIP;
 
-    private ImageView imageFoodButton;
-    private ImageView imageFood;
-    private ImageView joyStick;
-    private ImageView imageArrowRight;
-    private ImageView imageArrowLeft;
+    private final ImageView imageFoodButton;
+    private final ImageView imageFood;
+    private final ImageView joyStick;
+    private final ImageView imageArrowRight;
+    private final ImageView imageArrowLeft;
 
-    private Button playButton;
-    private Button feedButton;
-    private Button left;
-    private Button right;
-    private Button enter;
-    private HBox buttons;
-    private ToggleGroup startGroup;
-    private ToggleButton cat;
-    private ToggleButton dog;
-    private ToggleButton hamster;
-    private ToggleButton rabbit;
-    private ToggleButton turtle;
-    private ToggleButton pig;
-    private TextField name;
-    private TranslateTransition transition;
+    private final Button playButton;
+    private final Button feedButton;
+    private final Button left;
+    private final Button right;
+    private final Button enter;
+    private final HBox buttons;
+    private final ToggleGroup startGroup;
+    private final ToggleButton cat;
+    private final ToggleButton dog;
+    private final ToggleButton hamster;
+    private final ToggleButton rabbit;
+    private final ToggleButton turtle;
+    private final ToggleButton pig;
+    private final TextField name;
+    private final TranslateTransition transition;
     //thread
-    private ImageView imageHeartView;
-    private ImageView imageMoodView;
-    private ImageView condition;
-    private Label heartLabel = new Label();
-    private Label moodLabel = new Label();
+    private final ImageView imageHeartView;
+    private final ImageView imageMoodView;
+    private final ImageView condition;
+    private final Label heartLabel = new Label();
+    private final Label moodLabel = new Label();
     //animal
     private ImageView imageView;
     private Label imageLabel;
     //rockPaperScissors
     private ImageView playerRockPaperScissorsView;
-    private HBox rockPaperScissorsButtons;
-    private ToggleGroup rockPaperScissorsGroup;
-    private ToggleButton rock;
-    private ToggleButton paper;
-    private ToggleButton scissors;
+    private final HBox rockPaperScissorsButtons;
+    private final ToggleGroup rockPaperScissorsGroup;
+    private final ToggleButton rock;
+    private final ToggleButton paper;
+    private final ToggleButton scissors;
     private ImageView animalRockPaperScissorsView;
-    private TranslateTransition animalTransition;
-    private TranslateTransition playerTransition;
+    private final TranslateTransition animalTransition;
+    private final TranslateTransition playerTransition;
 
     private UIController(){}
     public static UIController getInstance(){
@@ -83,9 +83,8 @@ public class UIController implements Serializable {
     }
 
     {
-        root = new Pane();                                                  //
-        root.setPrefSize(Tamagotchi.weight, Tamagotchi.height);
         root = new Pane();
+        root.setPrefSize(Tamagotchi.weight, Tamagotchi.height);
         root.setPrefSize(Tamagotchi.weight, Tamagotchi.height);
         imageViewEgg = new ImageView(new Image("egg.png"));
         imageViewEgg.setPreserveRatio(true);
@@ -335,14 +334,12 @@ public class UIController implements Serializable {
                     playerTransition.play();
 
                     root.getChildren().removeAll(rockPaperScissorsButtons);
-
                 }
             });
         }
     }
 
     public void setAnimalLabels(Animal animal){
-        //////////
         imageView.setImage(new Image(tamagotchi.getAnimal().getTypeOfAnimal().getImgPath()));
         imageView.setFitWidth(tamagotchi.getAnimal().getMaturationStage().getImageWidth());
         imageLabel.setText(tamagotchi.getAnimal().getName());

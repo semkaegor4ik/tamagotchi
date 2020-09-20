@@ -19,19 +19,19 @@ public class Tamagotchi implements Serializable {
     private Animal animal;
     private final List<MiniGame> miniGames;
     private int countOfFeed = 0;
-    private RockPaperScissorsGame rockPaperScissorsGame ;
+    private final RockPaperScissorsGame rockPaperScissorsGame ;
     private final long timeToReborn = 7200000;
     public static final int weight = 1000;
     public static final int height = 500;
     public static final int stateOfImageSize = 40;
-    private UIController controller;
+    private final UIController controller;
 
 
     private Tamagotchi(){
         controller = UIController.getInstance();
         rockPaperScissorsGame = RockPaperScissorsGame.getInstance();
         controller.setTamagotchi(this);
-        rockPaperScissorsGame.setController(controller);                             //
+        rockPaperScissorsGame.setController(controller);
         miniGames = new ArrayList<>();
         miniGames.add(rockPaperScissorsGame);
     }
@@ -83,7 +83,7 @@ public class Tamagotchi implements Serializable {
         animal = new Animal(typeOfAnimal, name);
         conditionThread = new ConditionThread();
         conditionThread.setDaemon(true);
-        conditionThread.setAnimal(animal);
+        conditionThread.setAnimalAndImageLabel(animal);
         conditionThread.start();
     }
 

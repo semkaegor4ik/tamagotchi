@@ -34,7 +34,7 @@ public class Serialization implements Serializable {
             tamagotchi.setDateOfDead(serialization.dateOfDead);
             tamagotchi.setAnimal(serialization.animal);
             tamagotchi.setCountOfFeed(serialization.countOfFeed);
-            conditionThread.setAnimal(serialization.animal);
+            conditionThread.setAnimalAndImageLabel(serialization.animal);
             if(!Condition.DIE.equals(serialization.animal.getCondition()))
                 conditionThread.start();
             tamagotchi.setConditionThread(conditionThread);
